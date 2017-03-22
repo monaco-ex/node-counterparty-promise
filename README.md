@@ -1,36 +1,37 @@
-# node-bitcoin-promise
+# node-counterparty-promise
 
-#Summary
-Add Promise support to <A href="//github.com/freewil/node-bitcoin/blob/master/Readme.md">bitcoin</A> package.
+# Summary
+
+Add Promise support to [counterparty](https:/github.com/monaco-ex/node-counterparty/) package.
+(Almost all same as to [bitcoin-promise](https:/github.com/rcorbish/node-bitcoin-promise) package.
 It is backward compatible with the original package. If no callback function is
 passed in to a command a Promise is returned
 
-#Installation
+# Installation
 
-	npm install bitcoin-promise
+```
+npm install counterparty-promise
+```
 
+# Example
 
-#Example
-	var bitcoin = require( 'bitcoin-promise' ) ;
+```
+var counterparty = require( 'counterparty-promise' ) ;
 
-	var client = new bitcoin.Client({
-		host: 'rcorbish.ydns.eu',
-		port: 18332,
-		user: 'bitcoinrpc',
-		pass: 'password',
-		timeout: 30000
-	});
+var client = new counterparty.Client({
+  host: 'localhost',
+  port: 4000,
+  user: 'rpc',
+  pass: 'password',
+  timeout: 30000
+});
 
-	// get a new address and return details about it
-	client.getNewAddress()
-	.then( function(addr){
-		return client.validateAddress( addr ) ;
-	}) 
-	.then( function(addrInfo){
-		console.log( addrInfo ) ;
-	}) 
-	.catch( function(err){
-		console.log( err ) ;
-	}) ;
-
-
+// get running information
+client.getRunningInfo()
+  .then( function(result){
+    console.log( result );
+  }) 
+  .catch( function(err){
+    console.log( err ) ;
+  }) ;
+```
