@@ -1,7 +1,7 @@
 {
   "name": "counterparty-promise",
   "description": "Communicate with counterpartyd via JSON-RPC",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "main": "lib/index.js",
   "keywords": [
     "counterparty",
@@ -13,7 +13,7 @@
   "contributors": [
   ],
   "dependencies": {
-	"counterparty": ">= 0.0.1"
+	"counterparty": ">= 0.0.2"
   },
   "devDependencies": {
   },
